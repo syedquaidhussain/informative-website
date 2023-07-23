@@ -1,0 +1,231 @@
+.toggle-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .toggle-slot {
+    font-size: 10px;
+    position: relative;
+    height: 3.5em;
+    width: 7em;
+    border: 0px solid transparent;
+    border-radius: 10em;
+    background-color: white;
+    transition: background-color 250ms;
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot {
+    background-color: #374151;
+  }
+  
+  .toggle-button {
+    transform: translate(0.3em, 0.25em);
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: inset 0px 0px 0px 0.75em #0071E3;
+    transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+    background-color: #485367;
+    box-shadow: inset 0px 0px 0px 0.75em white;
+    transform: translate(3.65em, 0.25em);
+  }
+  
+  .sun-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: #ffbb52;
+  }
+  
+  .sun-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+    opacity: 0;
+    transform: translate(3em, 2em) rotate(0deg);
+  }
+  
+  .moon-icon {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    color: white;
+  }
+  
+  .moon-icon-wrapper {
+    position: absolute;
+    height: 6em;
+    width: 6em;
+    opacity: 0;
+    transform: translate(11em, 2em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+  }
+  
+  .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+    opacity: 1;
+    transform: translate(2em, 2em) rotate(-15deg);
+  }
+
+ #header{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+ }
+ h1{
+    color: transparent;
+    background-image:linear-gradient(black,black);
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    animation: slide 4s infinite alternate-reverse ease-in-out;
+ }
+
+
+nav .nav__btn{
+  background: linear-gradient(270deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  border: none;
+  cursor:pointer;
+ font-family: 'Edu SA Beginner', cursive;
+ /* font-family: 'Raleway', sans-serif; */
+ /* font-family: 'Victor Mono', monospace; */
+  font-weight: bold;
+}
+.nav__btn:hover{
+  box-shadow: 0px 0px 30px 1px rgba(212, 0, 255, 0.3);
+}
+
+ @keyframes slide {
+    0%{
+    background-position: -8em 0;
+    }
+    50%{
+    background-position: 0 0;
+    }
+    100%{
+    background-position: 0 0;
+    }
+}
+
+.card {
+  align-items: center;
+  justify-content: center;
+  width: 60vmin;
+  height: 70vh;
+  background: black;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  border-radius: 20px;
+  top: -80vh;
+  left: calc(50vw - 32vmin);
+  position: absolute;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: cursive;
+  transition:all 4s;
+}
+
+.card h2 {
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+  font-size: cursive;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  width: 32vmin;
+  background-image: linear-gradient(270deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  height: 130%;
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+}
+
+
+.card::after {
+  content: '';
+  position: absolute;
+  background: black;
+  inset: 5px;
+  border-radius: 15px;
+}  
+.card:hover{
+  box-shadow: 0px 0px 30px 1px rgba(212, 0, 255, 0.3);
+  transform: scale(1.1);
+  background-color: rgb(71, 71, 71);
+  
+}
+.card h1,form{
+  z-index: 3;
+}
+.card form{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70%;
+  flex-direction: column;
+}
+.card h1{
+  color: white;
+  font-size: xx-large;
+  text-align: center;
+}
+.card #username,#password{
+  text-align: center;
+  outline: none;
+  border-radius: 25px;
+  color: white;
+  background-color: transparent;
+}
+.card input[type='submit']{
+  color:white;
+  background-color: #252525;
+  padding: 0.5em;
+  padding-left: 2.3em;
+  padding-right: 2.3em;
+  border-radius: 5px;
+}
+.card #buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.card input{
+  cursor: pointer;
+  font-family: 'Victor Mono', monospace;
+  font-weight: bold;
+
+}
+#forget-btn:hover{
+  background-color: red;
+}
+#login-btn:hover,#signup-btn:hover{
+  background: linear-gradient(270deg, rgb(0, 183, 255), rgb(255, 48, 255));
+}
+
+  
+
+@keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  } 
